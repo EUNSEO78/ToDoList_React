@@ -1,0 +1,45 @@
+.tdContainer {
+  width: 50%;
+  height: 90%;
+  padding: 30px 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.tdTitle {
+  width: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #282c37;
+  color: white;
+}
+.tdListBox {
+  width: 95%;
+  height: 100%;
+  padding: 20px;
+  border: 3px solid #1d1d1f;
+  border-radius: 10px;
+  position: relative;
+}
+.tdLists {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listBtn {
+  padding: 5px 10px;
+  font-weight: 800;
+  color: white;
+  background-color: #282c37d0;
+  border-radius: 10px;
+}
