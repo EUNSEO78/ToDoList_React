@@ -1,11 +1,15 @@
 import { useState } from "react";
 
-const TodoListItem = ({ text }) => {
-  const [isChecked, setIsChecked] = useState(false);
-  const checked = (e) =>
-    setIsChecked((prev) => {
-      return e.target.checked;
-    });
+type TodoListItemProps = {
+  text: string;
+};
+
+const TodoListItem = ({ text }: TodoListItemProps) => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const checked = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setIsChecked(e.target.checked);
+
   const style = {
     liBoxSt: {
       display: "flex",
@@ -18,6 +22,7 @@ const TodoListItem = ({ text }) => {
       textDecorationLine: isChecked ? "line-through" : "none",
     },
   };
+
   return (
     <li style={style.liBoxSt}>
       <input type="checkbox" checked={isChecked} onChange={checked} />

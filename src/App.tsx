@@ -1,7 +1,5 @@
 import "./common/reset.css";
 import TodoList from "./features/Todolist/components/TodoList";
-import DateWidget from "./features/widget/components/DateWidget";
-import TimeWidget from "./features/widget/components/TimeWidget";
 import Widgets from "./features/widget/components/Widgets";
 
 function App() {

@@ -1,5 +1,6 @@
 import DateWidget from "./DateWidget";
 import TimeWidget from "./TimeWidget";
+import Weather from "./Weather";
 import "../styles/Widgets.css";
 
 const Widgets = () => {
@@ -7,6 +8,7 @@ const Widgets = () => {
     <div className="widgetsContainer">
       <DateWidget />
       <TimeWidget />
+      <Weather />
     </div>
   );
 };

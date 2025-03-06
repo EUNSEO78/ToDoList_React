@@ -1,19 +1,24 @@
 import { useState } from "react";
-import TodoInput from "./TodoInput";
 import TodoListItem from "./TodoListItem";
+import TodoInput from "./TodoInput";
 import "../styles/TodoList.css";
 
 const TodoList = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [todoList, setTodoList] = useState([]);
-  const onChange = (e) => setInputValue((prev) => e.target.value);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [todoList, setTodoList] = useState<string[]>([]);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setInputValue((prev) => e.target.value);
+
   const onClick = () =>
     setTodoList((prev) => {
       setInputValue("");
       return [...prev, inputValue];
     });
-  const remove = (i) =>
+
+  const remove = (i: number) =>
     setTodoList((prev) => prev.filter((v, index) => index !== i));
+
   return (
     <div className="tdContainer">
       <h1 className="tdTitle">TODOLIST</h1>
@@ -22,7 +27,7 @@ const TodoList = () => {
           {todoList.map((v, i) => (
             <div className="list">
               <TodoListItem key={i} text={v} />
-              <button className="listBtn" id={i} onClick={() => remove(i)}>
+              <button className="listBtn" onClick={() => remove(i)}>
                 delete
               </button>
             </div>
