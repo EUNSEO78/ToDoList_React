@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "../styles/Widget.css";
 
 const TimeWidget = () => {
   const [time, setTime] = useState(new Date());
@@ -10,7 +9,7 @@ const TimeWidget = () => {
     }, 1000);
   }, []);
   return (
-    <div className="widgetContainer">
+    <div className="w-[800px] bg-myWidgetBg py-8 rounded-md text-3xl font-extrabold text-white flex justify-center g-5">
       ❅<span>{time.toLocaleTimeString()}</span>❅
     </div>
   );

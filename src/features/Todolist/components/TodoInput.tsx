@@ -1,6 +1,6 @@
 type InputProps = {
   value: string;
-  onChange: any;
+  onChange: (e) => void;
   onClick: () => void;
 };
 
@@ -15,7 +15,7 @@ const TodoInput = ({ value, onChange, onClick }: InputProps) => {
         onChange={onChange}
       />
       <button
-        className="p-1.5 bg-slate-800 text-white border-none rounded-md text-lg"
+        className="p-1.5 bg-slate-800 text-white border-none rounded-md text-md font-bold"
         onClick={onClick}
       >
         INSERT

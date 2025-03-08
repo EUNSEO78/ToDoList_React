@@ -4,26 +4,8 @@ import Widgets from "./features/widget/components/Widgets";
 
 function App() {
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        // backgroundImage: "linear-gradient(60deg, #29323c 0%, #485563 100%)",
-        backgroundImage: "linear-gradient(to right, #243949 0%, #517fa4 100%)",
-        padding: "50px 0",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "90%",
-          height: "100%",
-          margin: "0 auto",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+    <div className="w-screen h-screen bg-gradient-to-r from-[#243949] to-[#517fa4] py-[50px] max-sm:h-[200vh]">
+      <div className="w-full max-w-[90%] h-full m-auto flex justify-between items-center max-sm:flex-col">
         <Widgets />
         <TodoList />
       </div>

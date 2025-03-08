@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "../styles/Weather.css";
 
 const Weather = () => {
   const [img, setImg] = useState<string>("");
@@ -26,15 +25,17 @@ const Weather = () => {
   }, []);
 
   return (
-    <div className="weatherContainer">
-      <h1>❅ Weather ❅</h1>
-      <div className="weatherContents">
-        <div className="img_box">
-          <img className="img" src={img} alt="" />
+    <div className="w-[800px] bg-myWeatherWidgetBg py-8 rounded-md text-3xl font-extrabold text-white flex justify-center g-5">
+      <h1 className=" h-fit border-b-2 border-white border-solid ">
+        ❅ Weather ❅
+      </h1>
+      <div className="flex gap-2.5 justify-center items-center">
+        <div className="w-[300px] h-[300px]">
+          <img className="w-full h-full object-cover" src={img} alt="" />
         </div>
-        <div className="weatherInfo_box">
-          <span className="location">{location}</span>
-          <span className="temp">{temp}°C</span>
+        <div className="flex flex-col gap-5 ">
+          <span>{location}</span>
+          <span className="text-[60px]">{temp}°C</span>
         </div>
       </div>
     </div>

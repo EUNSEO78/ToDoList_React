@@ -10,23 +10,16 @@ const TodoListItem = ({ text }: TodoListItemProps) => {
   const checked = (e: React.ChangeEvent<HTMLInputElement>) =>
     setIsChecked(e.target.checked);
 
-  const style = {
-    liBoxSt: {
-      display: "flex",
-      gap: "10px",
-      fontSize: "20px",
-    },
-    textSt: {
-      fontWeight: "800",
-      color: isChecked ? "black" : "skyblue",
-      textDecorationLine: isChecked ? "line-through" : "none",
-    },
-  };
-
   return (
-    <li style={style.liBoxSt}>
+    <li className="flex gap-2.5 text-xl ">
       <input type="checkbox" checked={isChecked} onChange={checked} />
-      <span style={style.textSt}>{text}</span>
+      <span
+        className={`font-extrabold ${
+          isChecked ? "font-black line-through" : "text-sky-600 none"
+        }`}
+      >
+        {text}
+      </span>
     </li>
   );
 };

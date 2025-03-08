@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TodoListItem from "./TodoListItem";
 import TodoInput from "./TodoInput";
-import "../styles/TodoList.css";
+import TodoListTitle from "./TodoListTitle";
 
 const TodoList = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -20,14 +20,17 @@ const TodoList = () => {
     setTodoList((prev) => prev.filter((v, index) => index !== i));
 
   return (
-    <div className="tdContainer">
-      <h1 className="tdTitle">TODOLIST</h1>
-      <div className="tdListBox">
-        <ul className="tdLists">
+    <div className="w-2/4 h-5/6 py-8 px-5 bg-white rounded-lg flex flex-col justify-center gap-2.5 shadow-2xl shadow-white max-sm:w-full ">
+      <TodoListTitle />
+      <div className="w-11/12 h-full m-auto p-5 border-2 border-solid border-sky-700 rounded-lg relative">
+        <ul className="flex flex-col gap-2.5">
           {todoList.map((v, i) => (
-            <div className="list">
+            <div className="flex justify-between items-center">
               <TodoListItem key={i} text={v} />
-              <button className="listBtn" onClick={() => remove(i)}>
+              <button
+                className="py-2.5 px-1.5 text-white bg-slate-800 rounded-md font-bold "
+                onClick={() => remove(i)}
+              >
                 delete
               </button>
             </div>

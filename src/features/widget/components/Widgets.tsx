@@ -1,11 +1,10 @@
 import DateWidget from "./DateWidget";
 import TimeWidget from "./TimeWidget";
 import Weather from "./Weather";
-import "../styles/Widgets.css";
 
 const Widgets = () => {
   return (
-    <div className="widgetsContainer">
+    <div className="flex flex-col gap-10">
       <DateWidget />
       <TimeWidget />
       <Weather />
