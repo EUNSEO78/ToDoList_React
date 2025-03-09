@@ -20,15 +20,15 @@ const TodoList = () => {
     setTodoList((prev) => prev.filter((v, index) => index !== i));
 
   return (
-    <div className="w-2/4 h-5/6 py-8 px-5 bg-white rounded-lg flex flex-col justify-center gap-2.5 shadow-2xl shadow-white max-sm:w-full ">
+    <div className="w-2/4 h-5/6 py-8 px-5 bg-myWidgetBg rounded-lg flex flex-col justify-center gap-2.5 shadow-2xl shadow-slate-950 max-md:w-full  ">
       <TodoListTitle />
-      <div className="w-11/12 h-full m-auto p-5 border-2 border-solid border-sky-700 rounded-lg relative">
+      <div className="w-11/12 h-full m-auto p-5 border-2 border-solid border-white rounded-lg relative">
         <ul className="flex flex-col gap-2.5">
           {todoList.map((v, i) => (
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center border border-white border-solid p-2">
               <TodoListItem key={i} text={v} />
               <button
-                className="py-2.5 px-1.5 text-white bg-slate-800 rounded-md font-bold "
+                className="py-2.5 px-1.5 text-slate-800 bg-white rounded-md font-bold "
                 onClick={() => remove(i)}
               >
                 delete

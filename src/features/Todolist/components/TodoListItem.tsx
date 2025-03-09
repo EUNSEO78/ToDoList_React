@@ -15,7 +15,9 @@ const TodoListItem = ({ text }: TodoListItemProps) => {
       <input type="checkbox" checked={isChecked} onChange={checked} />
       <span
         className={`font-extrabold ${
-          isChecked ? "font-black line-through" : "text-sky-600 none"
+          isChecked
+            ? "font-black line-through text-myWeatherWidgetBg"
+            : "text-white none"
         }`}
       >
         {text}
